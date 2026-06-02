@@ -29,3 +29,4 @@ The application should use the Anthropic SDK to send code to Claude for review a
 
 When implementing the Claude API integration, use prompt caching for repeated system prompts to reduce cost and latency. Default to the latest capable model (`claude-sonnet-4-6` or newer).
 
+ 
