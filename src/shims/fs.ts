@@ -1,0 +1,23 @@
+/** node:fs / node:fs/promises 브라우저 shim */
+const noop = () => Promise.resolve(undefined as any);
+export const readFile = () => Promise.resolve(new Uint8Array());
+export const writeFile = noop;
+export const mkdir = noop;
+export const stat = () => Promise.resolve({ isDirectory: () => false, isFile: () => false, isSymbolicLink: () => false });
+export const lstat = () => Promise.resolve({ isDirectory: () => false, isFile: () => false, isSymbolicLink: () => false });
+export const readdir = () => Promise.resolve([] as string[]);
+export const unlink = noop;
+export const rm = noop;
+export const rename = noop;
+export const realpath = (p: string) => Promise.resolve(p);
+export const readlink = () => Promise.resolve('');
+export const open = () => Promise.resolve({ close: noop, write: noop });
+export const access = noop;
+export const glob = () => (async function* () {})();
+export const constants = { F_OK: 0, R_OK: 4, W_OK: 2, X_OK: 1, O_RDONLY: 0, O_WRONLY: 1, O_RDWR: 2, O_CREAT: 64, O_EXCL: 128, O_TRUNC: 512, O_APPEND: 1024 };
+export const createWriteStream = () => ({ write: () => {}, end: () => {}, on: () => {}, once: () => {}, emit: () => {} });
+export const createReadStream = () => ({ pipe: (dest: any) => dest, on: () => {}, resume: () => {}, destroy: () => {} });
+export const existsSync = () => false;
+export const readFileSync = () => '';
+export const promises = { readFile, writeFile, mkdir, stat, lstat, readdir, unlink, rm, rename, realpath, readlink, open, access, glob };
+export default { readFile, writeFile, mkdir, stat, lstat, readdir, unlink, rm, rename, realpath, readlink, open, access, glob, constants, createWriteStream, createReadStream, existsSync, readFileSync, promises };

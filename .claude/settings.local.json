@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(dir \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\")",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\" -Recurse -Force | Where-Object { $_.FullName -notmatch 'node_modules' } | Select-Object -ExpandProperty FullName | Sort-Object)",
+      "Bash(npm run *)",
+      "Bash(npx playwright *)",
+      "PowerShell(Get-ChildItem -Force -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\" | Select-Object Name, @{Name='Type'; Expression={if \\($_.PSIsContainer\\) {'Dir'} else {'File'}}})",
+      "PowerShell(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\src\" -File | Select-Object @{Name='RelativePath'; Expression={$_.FullName.Replace\\(\"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\\", \"\"\\)}})",
+      "PowerShell(Test-Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\src\"; if \\(\\(Test-Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\src\"\\) -and \\(Get-ChildItem \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\src\" -Force\\).Count -gt 0\\) { Get-ChildItem -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\src\" -Force -Recurse | Select-Object @{Name='Path'; Expression={$_.FullName.Replace\\(\"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\\", \"\"\\)}} } else { \"src directory is empty or does not exist\" })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\.claude\" -Force -Recurse 2>$null | Select-Object @{Name='Path'; Expression={$_.FullName.Replace\\(\"C:\\\\Users\\\\admin\\\\OneDrive\\\\Desktop\\\\claude_code_pj\\\\ai-code-reviewer\\\\\", \"\"\\)}})"
+    ]
+  }
+}
