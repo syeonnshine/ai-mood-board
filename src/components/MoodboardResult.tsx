@@ -2,6 +2,7 @@ import type { MoodboardData } from '../types/moodboard';
 import ColorPalette from './ColorPalette';
 import FontCombination from './FontCombination';
 import MoodKeywords from './MoodKeywords';
+import ImageGrid from './ImageGrid';
 import { IconPalette } from './Icons';
 
 interface MoodboardResultProps {
@@ -33,9 +34,14 @@ export default function MoodboardResult({ data, keywords }: MoodboardResultProps
       </div>
 
       <div className="space-y-5">
+        <ImageGrid
+          keywords={data.unsplashQuery || keywords}
+          paletteHexes={data.colorPalette.map((c) => c.hex)}
+        />
         <ColorPalette colors={data.colorPalette} />
         <FontCombination combinations={data.fontCombinations} />
         <MoodKeywords keywords={data.moodKeywords} overallMood={data.overallMood} />
+        
       </div>
     </div>
   );

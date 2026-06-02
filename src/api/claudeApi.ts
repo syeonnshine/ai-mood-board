@@ -36,6 +36,11 @@ Generate exactly 5 colors. Each color must have:
 ## Overall Mood
 - 2–3 sentence summary in Korean
 
+## Unsplash Query
+- 3–5 English words suitable for Unsplash photo search (e.g. "minimalist nordic interior", "retro pop art vibrant")
+- Must be in English only — Unsplash indexes photos in English
+- Capture the visual aesthetic, not a literal translation
+
 응답은 반드시 순수 JSON 형식으로만 작성하세요. 마크다운 코드 블록이나 다른 텍스트 없이 JSON만 반환하세요.
 
 응답 형식:
@@ -49,7 +54,8 @@ Generate exactly 5 colors. Each color must have:
     ...
   ],
   "moodKeywords": ["우아한", "현대적인", ...],
-  "overallMood": "전체 무드 설명..."
+  "overallMood": "전체 무드 설명...",
+  "unsplashQuery": "minimalist modern interior"
 }`;
 
 /**
@@ -71,6 +77,7 @@ const DEMO_MOODBOARDS: MoodboardData[] = [
     ],
     moodKeywords: ['창의적인', '감각적인', '모던한', '생동감 있는', '세련된', '신비로운', '역동적인', '감성적인', '독창적인', '트렌디한', '대담한', '예술적인'],
     overallMood: '이 무드보드는 창의성과 열정이 넘치는 분위기를 담고 있습니다. 깊은 보라와 핫 핑크의 대비가 강렬한 인상을 주며, 앰버 골드 포인트가 따뜻한 활기를 더합니다. 세련되고 현대적이면서도 감성적인 디자인 방향을 제시합니다.',
+    unsplashQuery: 'creative colorful vibrant artistic modern',
   },
   {
     colorPalette: [
@@ -86,6 +93,7 @@ const DEMO_MOODBOARDS: MoodboardData[] = [
     ],
     moodKeywords: ['미니멀한', '차분한', '세련된', '지적인', '현대적인', '고요한', '깊이 있는', '신뢰감 있는', '클린한', '전문적인', '절제된', '우아한'],
     overallMood: '깊고 차분한 오션 블루 계열이 안정감과 신뢰를 전달합니다. 터콰이즈 포인트가 단조로움을 깨고 생동감을 더하며, 전체적으로 지적이고 절제된 아름다움이 돋보입니다. 미니멀하지만 깊이 있는 브랜드 아이덴티티에 이상적입니다.',
+    unsplashQuery: 'dark ocean blue minimal professional',
   },
   {
     colorPalette: [
@@ -101,6 +109,7 @@ const DEMO_MOODBOARDS: MoodboardData[] = [
     ],
     moodKeywords: ['자연스러운', '따뜻한', '유기적인', '편안한', '지속가능한', '진정성 있는', '풍요로운', '소박한', '내추럴한', '에코', '힐링', '포근한'],
     overallMood: '대지와 자연에서 영감 받은 따뜻한 어스 톤이 편안함과 진정성을 전달합니다. 카라멜과 모카의 풍요로운 갈색 계열이 포레스트 그린과 만나 균형 잡힌 자연의 아름다움을 표현합니다. 친환경적이고 진실된 브랜드에 최적화된 무드입니다.',
+    unsplashQuery: 'natural earth tones forest cozy organic',
   },
 ];
 

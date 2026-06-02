@@ -18,6 +18,7 @@ export interface MoodboardData {
   fontCombinations: FontCombination[];
   moodKeywords: string[];
   overallMood: string;
+  unsplashQuery: string; // Unsplash 검색용 영어 키워드 (예: "minimalist nordic interior")
 }
 
 /** API 호출 상태 */
