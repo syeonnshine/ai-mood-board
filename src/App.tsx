@@ -127,7 +127,7 @@ export default function App() {
       </main>
 
       <footer className="text-center py-8 text-zinc-300 text-xs border-t border-stone-200 mt-10">
-        <p>AI 무드보드 생성기 · Claude Opus 4.7</p>
+        <p>AI 무드보드 생성기 · Claude Sonnet 4.6</p>
       </footer>
     </div>
   );

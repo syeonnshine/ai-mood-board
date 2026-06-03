@@ -19,7 +19,7 @@ export async function fetchUnsplashImages(keywords: string): Promise<UnsplashIma
   if (!accessKey) throw new Error('Unsplash API 키가 설정되지 않았습니다.');
 
   const query = encodeURIComponent(keywords);
-  const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=30&orientation=squarish`;
+  const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=12&orientation=squarish`;
 
   const res = await fetch(url, {
     headers: { Authorization: `Client-ID ${accessKey}` },
