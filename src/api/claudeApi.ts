@@ -141,7 +141,7 @@ export async function generateMoodboard(
   });
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-7',
+    model: 'claude-opus-4-8',
     max_tokens: 2048,
     // 시스템 프롬프트 캐싱 적용 — 동일한 시스템 프롬프트가 반복될 때 비용 절감
     system: [
